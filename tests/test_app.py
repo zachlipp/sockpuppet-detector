@@ -45,4 +45,4 @@ def test_get_prediction():
         # GET requests
         with pytest.raises(TypeError):
             response = client.get("/", json=payload)
-        assert response.status_code == 200
+            assert response.status_code == 200
