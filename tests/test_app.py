@@ -34,7 +34,7 @@ payload = {
             "screen_name": "lebron_number_one_goooatt",
         },
     ],
-    "hashtag": "#covid",
+    "hashtag": "#lebron",
     "min_similarity": 0.5,
 }
 

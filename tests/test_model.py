@@ -11,6 +11,16 @@ def test_get_hashtag_accounts():
     accounts = get_hashtag_accounts(posts, "#blessed")
     assert accounts == ["1", "2"]
 
+def test_hashtag_search_works():
+    posts = [
+        {"is_repost": False, "hashtags": ["#blessed"], "author_id": "1"},
+        {"is_repost": False, "hashtags": ["#blessed"], "author_id": "2"},
+        {"is_repost": False, "hashtags": None, "author_id": "3"},
+        {"is_repost": True, "hashtags": ["#blessed"], "author_id": "4"},
+    ]
+    accounts = get_hashtag_accounts(posts, "#covid")
+    assert len(accounts) == 0
+
 
 def test_similar_screen_names():
     accounts = [{"screen_name": "asdf"}, {"screen_name": "asdf"}]

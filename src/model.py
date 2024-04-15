@@ -25,11 +25,11 @@ def get_hashtag_accounts(posts: List[Dict], hashtag: str) -> List[str]:
     hashtag_users = defaultdict(list)
     for post in posts:
         if not post["is_repost"]:
-            hashtags = post["hashtags"]
-            if hashtags:
-                for hashtag in hashtags:
-                    hashtag_users[hashtag].append(post["author_id"])
-    return hashtag_users.get(hashtag)
+            post_hashtags = post["hashtags"]
+            if post_hashtags:
+                for post_hashtag in post_hashtags:
+                    hashtag_users[post_hashtag].append(post["author_id"])
+    return hashtag_users.get(hashtag, [])
 
 
 def get_similar_screen_names(
