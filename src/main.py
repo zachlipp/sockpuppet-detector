@@ -30,7 +30,10 @@ class ModelInput(BaseModel):
     min_similarity: float
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Sock Puppet Detector",
+    description="An example Python service built to specification for an interview",
+)
 
 
 @app.get("/")

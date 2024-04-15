@@ -4,6 +4,8 @@
 
 `docker compose --profile run up --build`
 
+The service's endpoint is `http://localhost:1337/`, and because this is built with `FastAPI`, the docs are viewable at `http://localhost:1337/redoc`.
+
 ## Testing
 
 ### With `pytest`
@@ -12,7 +14,7 @@
 
 ### With `curl`
 
-Because this service uses `GET` requests in a nonstandard way (passing JSON data), we are unable to use `FastAPI/Starlette`'s `TestClient` to coordinate our integration tests. So to run a true end-to-end example, run the container with the `run` profile, and then use `curl` to send data. That is,
+Because this service uses `GET` requests in a nonstandard way (passing JSON data), we are unable to use `FastAPI`/`Starlette`'s `TestClient` to coordinate our integration tests. So to run a true end-to-end example, run the container with the `run` profile, and then use `curl` to send data. That is,
 
 `docker compose --profile run up -d --build`
 
